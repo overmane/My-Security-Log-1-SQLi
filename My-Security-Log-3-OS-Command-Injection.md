@@ -2,7 +2,7 @@
 This my public notes regarding my experiences with the OS Command Injection topic on PortSwigger Academy.
 
 **Date:** January 5, 2026  
-**Source:** PortSwigger Academy & Practical Scenarios
+**Source:** PortSwigger Academy & Personal Study Notes
 
 ---
 
@@ -53,8 +53,7 @@ When the environment is completely "blind" and firewalls block direct output, we
 ---
 
 ## Future Roadmap
-* **Defensive Coding:** Reviewing parameterized APIs that execute system tasks without a shell (e.g., `execve()` vs `system()`).
-* **Path Traversal:** Moving to the next module to explore file system vulnerabilities.
+* **IDOR (Access control vulnerabilities)** repeat and reinforce.
 
 ---
 *Notes compiled based on PortSwigger Academy research materials.*

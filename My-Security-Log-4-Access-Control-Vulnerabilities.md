@@ -32,7 +32,8 @@ Sometimes developers rely on data provided by the client to determine privileges
 This technique is typical for architectures using a **Frontend Proxy (Nginx/HAProxy/Cloudflare)** and a **Backend Server**.
 * **Mechanism:** The frontend blocks access to `/admin`, but the backend uses specific headers to determine the "real" requested path. By using headers like `X-Original-Url: /admin/delete`, the frontend sees a safe request (e.g., `GET /`), while the backend processes the path provided in the header, bypassing the filter.
 * **Key Headers:** `X-Original-Url`, `X-Rewrite-Url`, `X-Forwarded-For`, `X-Custom-IP-Authorization`, `X-Remote-IP`.
-* **Identification:** * **Status Codes:** If `/admin` gives `403 Forbidden` (from Proxy) but `/non-existent` gives `404 Not Found` (from Backend), `/admin` is likely blacklisted at the proxy level.
+* **Identification:**
+    * **Status Codes:** If `/admin` gives `403 Forbidden` (from Proxy) but `/non-existent` gives `404 Not Found` (from Backend), `/admin` is likely blacklisted at the proxy level.
     * **Server Headers:** Compare `Server` or `X-Powered-By` headers in blocked vs. normal responses to see which layer is rejecting the request.
 
 ### 4. Real-World Scenarios

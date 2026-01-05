@@ -12,7 +12,8 @@ OS Command Injection (also known as shell injection) occurs when an application 
 ### 1. Vector Identification & Command Chaining
 The first step is identifying parameters that the server-side logic might be passing to a shell. We use command separators to "piggyback" our malicious payload onto the legitimate command.
 
-* **Command Separators:** * **Linux:** `;`, `&&`, `||`, `|`, `` ` `` (backticks), `$(command)`
+* **Command Separators:**
+    * **Linux:** `;`, `&&`, `||`, `|`, `` ` `` (backticks), `$(command)`
     * **Windows:** `&`, `&&`, `||`, `|`
 * **Simple In-band Test:** `productId=2&storeId=1|whoami`. If the application takes the input and executes something like `shell_exec("get_stock.sh " + storeId)`, our payload transforms it into `get_stock.sh 1|whoami`, returning the current user directly in the HTTP response.
 

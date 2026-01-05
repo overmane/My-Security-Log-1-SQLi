@@ -1,7 +1,7 @@
 # My-Security-Log-2-XSS
 This my public notes regarding my experiences with the Cross-Site Scripting (XSS) topic on PortSwigger Academy.
 
-**Date:** January 5, 2026  
+**Date:** January 4, 2026  
 **Source:** PortSwigger Academy & Personal Study Notes
 
 ---

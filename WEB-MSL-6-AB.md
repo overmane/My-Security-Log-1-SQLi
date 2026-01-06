@@ -11,7 +11,7 @@ Authentication bypass occurs when an attacker exploits vulnerabilities in the lo
 
 ### 1. Brute-Force & Response Anomalies
 The most basic entry point is brute-forcing usernames and passwords via **Burp Intruder**. 
-* **Username Enumeration:** Look for subtle differences in error messages (e.g., "Invalid username" vs. "Invalid password").
+* **Username Enumeration:** Look for subtle differences in error messages (e.g., "Invalid username" vs "Invalid password").
 * **Response Timing:** Sometimes the server takes slightly longer to process a correct username, even if the password is wrong.
 * **Status Codes:** A `200 OK` vs. a `403 Forbidden` can reveal if a user exists.
 

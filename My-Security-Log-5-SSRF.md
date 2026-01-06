@@ -43,7 +43,7 @@ For cloud environments (AWS, Azure, GCP), SSRF is critical due to the **Instance
 ## Personal Insights & Conclusions
 
 > **Author's Perspective:**
-> SSRF is very similar to IDOR, but instead of "tricks" with arguments like `id=123`, we "play around" with paths—for example, shifting from `?path=script.py` to `?path=http://127.0.0.1/admin`. 
+> SSRF is very similar to IDOR, but instead of "tricks" with arguments like `id=123`, we "play around" with paths — for example, shifting from `?path=script.py` to `?path=http://127.0.0.1/admin`. 
 >
 > A realistic modern exploitation scenario: an attacker finds an SSRF -> probes the internal IP perimeter -> discovers an internal-only script -> sends a request via SSRF with a malicious payload for that script -> the server executes it -> **Boom! RCE.** The attacker gains a reverse shell, leading to server compromise or full domain escalation. 
 >
